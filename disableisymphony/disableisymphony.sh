@@ -2,7 +2,7 @@
 #############################################
 # Created by Alex Leach - @ajleach          #
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.1  RELEASE DATE JUN 12 2015     #
+# VERSION 1.2  RELEASE DATE JUN 12 2015     #
 # DESC: DISABLES ISYMPHONY IF INSTALLED     #
 #############################################
 

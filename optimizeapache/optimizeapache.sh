@@ -2,8 +2,8 @@
 #############################################
 # Created by Alex Leach - @ajleach          #
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.0  RELEASE DATE JUN 12 2015     #
-# DESC: OPTIMZES APACHE MEM USAGE IN FPBX   #
+# VERSION 1.1  RELEASE DATE JUN 12 2015     #
+# DESC: OPTIMIZES APACHE MEM USAGE IN FPBX  #
 #############################################
 
 echo ""

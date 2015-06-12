@@ -9,12 +9,12 @@
 echo ""
 if rpm -qa | egrep -q iSymphonyServerV3;
 then
-	service iSymphonyServerV3 stop >/dev/null 2>&1
+	service iSymphonyServerV3 stop &> /dev/null
 	chkconfig iSymphonyServerV3 off
 	echo -e "iSymphonyServerV3 has been disabled.\n"
 elif rpm -qa | egrep -q iSymphonyServer;
 then
-	service iSymphonyServer stop >/dev/null 2>&1
+	service iSymphonyServer stop &> /dev/null
 	chkconfig iSymphonyServer off
 	echo -e "iSymphonyServer has been disabled.\n"
 else

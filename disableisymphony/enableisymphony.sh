@@ -9,12 +9,12 @@
 echo ""
 if rpm -qa | egrep -q iSymphonyServerV3;
 then
-	service iSymphonyServerV3 start
+	service iSymphonyServerV3 start &> /dev/null
 	chkconfig iSymphonyServerV3 on
 	echo -e "iSymphonyServerV3 has been enabled.\n"
 elif rpm -qa | egrep -q iSymphonyServer;
 then
-	service iSymphonyServer start
+	service iSymphonyServer start &> /dev/null
 	chkconfig iSymphonyServer on
 	echo -e "iSymphonyServer has been enabled.\n"
 else

@@ -7,12 +7,12 @@
 #############################################
 
 echo ""
-if [ rpm -qa | egrep -q iSymphonyServerV3 ]
+if [ rpm -qa | egrep -q iSymphonyServerV3 ];
 then
 	service iSymphonyServerV3 stop
 	chkconfig iSymphonyServerV3 off
 	echo -e "iSymphonyServerV3 has been disabled.\n"
-elif [ rpm -qa | egrep -q iSymphonyServer ]
+elif [ rpm -qa | egrep -q iSymphonyServer ];
 then
 	service iSymphonyServer stop
 	chkconfig iSymphonyServer off

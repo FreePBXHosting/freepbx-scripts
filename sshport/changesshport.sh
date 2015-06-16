@@ -1,7 +1,7 @@
 #!/bin/bash
 #############################################
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.2  RELEASE DATE JUN 12 2015     #
+# VERSION 1.3  RELEASE DATE JUN 12 2015     #
 # DESC: CHANGES SSH PORT AND RESTARTS SSH   #
 #############################################
 
@@ -24,4 +24,4 @@ sleep 5
 service sshd restart
 
 echo ""
-echo -e "The SSH port has been changed to $SSHPORT. Please login using that port to test.\n"
+echo -e "The SSH port has been changed to $SSHPORT. Please login using that port to test BEFORE ending this session.\n"

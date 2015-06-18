@@ -2,11 +2,16 @@
 #############################################
 # Created by Alex Leach - @ajleach          #
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.1  RELEASE DATE JUN 12 2015     #
+# VERSION 1.2       UPDATED JUN 18 2015     #
 # DESC: OPTIMIZES APACHE MEM USAGE IN FPBX  #
 #############################################
 
 echo ""
+
+if [ ! -f /etc/schmooze/pbx-version1 ]; then
+    echo -e "This does not appear to be a FreePBX server. No changes will be made."
+	exit 0
+fi
 
 # Create backup of current httpd.conf
 NOW=$(date +"%m_%d_%Y-%H_%M_%S")

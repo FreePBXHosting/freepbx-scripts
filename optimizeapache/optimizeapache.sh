@@ -8,7 +8,7 @@
 
 echo ""
 
-if [ ! -f /etc/schmooze/pbx-version1 ]; then
+if [ ! -f /etc/schmooze/pbx-version ]; then
     echo -e "This does not appear to be a FreePBX server. No changes will be made.\n"
 	exit 0
 fi

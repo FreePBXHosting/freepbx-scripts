@@ -31,8 +31,8 @@ sed -i -e "/MinSpareServers  /c\MinSpareServers    3" /etc/httpd/conf/httpd.conf
 sed -i -e "/MaxSpareServers  /c\MaxSpareServers   5" /etc/httpd/conf/httpd.conf
 sed -i -e "/MaxClients   /c\MaxClients       150" /etc/httpd/conf/httpd.conf
 
-echo -e "Gracefully restarting Apache in 5 seconds. Please wait.\n"
-sleep 5
+echo -e "Gracefully restarting Apache. Please wait.\n"
+sleep 1
 
 # Gracefully restart Apache
 service httpd graceful

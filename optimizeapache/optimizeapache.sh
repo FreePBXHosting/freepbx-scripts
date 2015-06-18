@@ -5,6 +5,14 @@
 # VERSION 1.2       UPDATED JUN 18 2015     #
 # DESC: OPTIMIZES APACHE MEM USAGE IN FPBX  #
 #############################################
+# This script will change the StartServers, #
+# MinSpareServers, MaxSpareServers, and     #
+# MaxClients variables in                   #
+# /etc/httpd/conf/httpd.conf and gracefully #
+# restart Apache. Login to SSH as the root  #
+# user and run:                             #
+#    bash <(curl -Ls http://git.io/vIFQD)   #
+#############################################
 
 echo ""
 

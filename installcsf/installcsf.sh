@@ -2,16 +2,8 @@
 #############################################
 # Created by Alex Leach - @ajleach          #
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.2       UPDATED JUN 18 2015     #
-# DESC: OPTIMIZES APACHE MEM USAGE IN FPBX  #
-#############################################
-# This script will change the StartServers, #
-# MinSpareServers, MaxSpareServers, and     #
-# MaxClients variables in                   #
-# /etc/httpd/conf/httpd.conf and gracefully #
-# restart Apache. Login to SSH as the root  #
-# user and run:                             #
-#    bash <(curl -Ls http://git.io/vIFQD)   #
+# VERSION 1.2       UPDATED JUN 19 2015     #
+# DESC: INSTALL CSF ON FREEPBX, OPEN PORTS  #
 #############################################
 
 echo ""
@@ -21,15 +13,23 @@ if [ ! -f /etc/schmooze/pbx-version ]; then
 	exit 0
 fi
 
-# Create backup of current httpd.conf
-NOW=$(date +"%m_%d_%Y-%H_%M_%S")
-cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bckup.$NOW
+# Stop and disable fail2ban
+service fail2ban stop
+chkconfig fail2ban off
 
-# Apply changes to httpd.conf
-sed -i -e "/StartServers  /c\StartServers       5" /etc/httpd/conf/httpd.conf
-sed -i -e "/MinSpareServers  /c\MinSpareServers    3" /etc/httpd/conf/httpd.conf
-sed -i -e "/MaxSpareServers  /c\MaxSpareServers   5" /etc/httpd/conf/httpd.conf
-sed -i -e "/MaxClients   /c\MaxClients       150" /etc/httpd/conf/httpd.conf
+# Download and install CSF
+mkdir /root/build
+cd /root/build
+rm -fv csf.tgz
+wget https://download.configserver.com/csf.tgz
+tar -xzf csf.tgz
+cd csf
+sh install.sh
+
+# Enable CSF and open ports in CSF config
+sed -i -e '/TESTING = "1"/c\TESTING = "0"' /etc/csf/csf.conf
+sed -i -e '/TCP_IN = "/c\TCP_IN = "20,21,22,53,80,5060,10000:20000"' /etc/csf/csf.conf
+sed -i -e '/TCP_OUT = "/c\TCP_OUT = "1:65535"' /etc/csf/csf.conf
 
 echo -e "Gracefully restarting Apache. Please wait.\n"
 sleep 1

@@ -23,6 +23,9 @@ while read SSHPORT; do
 			echo ""
 			echo -e "The SSH port has been changed to $SSHPORT. Please login using that port to test BEFORE ending this session.\n"
 			exit 0
+		else
+			echo -e "Invalid port: must be 22, or between 1024 and 65535."
+			echo -n "Please enter the port you would like SSH to run on > "
 		fi
 	else
 		echo -e "Invalid port: must be numeric!"

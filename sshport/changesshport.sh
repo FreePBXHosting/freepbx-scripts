@@ -9,7 +9,6 @@
 echo ""
 echo -n "Please enter the port you would like SSH to run on > "
 while read SSHPORT; do
-	echo -n "Please enter the port you would like SSH to run on > "
 	if [[ $port =~ ^[0-9]{2,5}$ ]]; then
 		# Create backup of current SSH config
 		NOW=$(date +"%m_%d_%Y-%H_%M_%S")
@@ -25,6 +24,7 @@ while read SSHPORT; do
 		exit 0
 	else
 		echo -e "Invalid port: must be numeric!"
+		echo -n "Please enter the port you would like SSH to run on > "
 	fi
 done
 

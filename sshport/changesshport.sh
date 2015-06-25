@@ -9,7 +9,8 @@
 echo ""
 echo -n "Please enter the port you would like SSH to run on > "
 while read SSHPORT; do
-	if [[ $SSHPORT =~ ^[0-9]{2,5}$ ]]; then
+	if [[ $SSHPORT =~ ^[0-9]{2,5}$ -o $SSHPORT = 22 ]]; then
+		if [[ $SSHPORT -ge 1024 -a $SSHPORT -le 65535 -o $SSHPORT = 22 ]]
 		# Create backup of current SSH config
 		NOW=$(date +"%m_%d_%Y-%H_%M_%S")
 		cp /etc/ssh/sshd_config /etc/ssh/sshd_config.inst.bckup.$NOW

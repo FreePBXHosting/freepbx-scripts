@@ -1,7 +1,7 @@
 #!/bin/bash
 #############################################
 # FreePBXHosting.com - @freepbxhosting      #
-# VERSION 1.5       UPDATED JUN 25 2015     #
+# VERSION 1.6       UPDATED JUN 25 2015     #
 # DESC: CHANGES SSH PORT AND RESTARTS SSH   #
 #############################################
 

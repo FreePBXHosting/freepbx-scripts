@@ -18,6 +18,7 @@ then
 		echo -e "iSymphonyServerV3 is already disabled.\n"
 		service iSymphonyServerV3 stop &> /dev/null
 		exit 0
+	fi
 elif rpm -qa | egrep -q iSymphonyServer;
 then
 	if chkconfig iSymphonyServer;
@@ -29,6 +30,7 @@ then
 		echo -e "iSymphonyServer is already disabled.\n"
 		service iSymphonyServer stop &> /dev/null
 		exit 0
+	fi
 else
 	echo -e "iSymphony does not appear to be installed."
 fi

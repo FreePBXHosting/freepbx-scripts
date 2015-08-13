@@ -23,7 +23,7 @@ fi
 
 # Create backup of current httpd.conf
 NOW=$(date +"%m_%d_%Y-%H_%M_%S")
-cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bckup.$NOW
+/bin/cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bckup.$NOW
 
 # Apply changes to httpd.conf
 sed -i -e "/StartServers  /c\StartServers       5" /etc/httpd/conf/httpd.conf
@@ -35,7 +35,7 @@ echo -e "Gracefully restarting Apache. Please wait.\n"
 sleep 1
 
 # Gracefully restart Apache
-service httpd graceful
+/sbin/service httpd graceful
 
 echo ""
 echo -e "Apache has been optimized, and a backup of the original config is available here: /etc/httpd/conf/httpd.conf.bckup.$NOW \n"

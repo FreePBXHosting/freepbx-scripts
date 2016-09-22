@@ -7,3 +7,7 @@ http://community.freepbx.org/t/i-ve-been-hacked-macro-thanku-outcall-thankuohoh/
 This by no means is a 'smart' script, and you will need to verify that things are cleaned up manually. Also a good idea to check /etc/passwd and /etc/shadow for rogue accounts.
 
 Basically, YMMV.
+
+Login to SSH as the root user and run:
+
+  bash <(curl -Ls https://git.io/vi5dX)

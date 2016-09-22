@@ -32,6 +32,8 @@ amportal a ma upgradeall
 amportal a r
 amportal a ma upgradeall
 amportal a r
+amportal a ma upgradeall
+amportal a r
 
 amportal chown
 

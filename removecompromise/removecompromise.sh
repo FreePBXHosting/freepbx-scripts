@@ -13,7 +13,7 @@ if [ ! -f /etc/schmooze/pbx-version ]; then
 	exit 0
 fi
 
-# Create backup of current httpd.conf
+# Create backup of current extensions_custom.conf
 NOW=$(date +"%m_%d_%Y-%H_%M_%S")
 /bin/cp /etc/asterisk/extensions_custom.conf /etc/asterisk/extensions_custom.conf.bckup.$NOW
 
@@ -28,6 +28,8 @@ amportal a ma refreshsignatures
 amportal a r
 
 amportal a ma enable fw_ari
+amportal a ma upgradeall
+amportal a r
 amportal a ma upgradeall
 amportal a r
 

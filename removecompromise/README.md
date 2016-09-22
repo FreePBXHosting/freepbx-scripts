@@ -10,4 +10,4 @@ Basically, YMMV.
 
 Login to SSH as the root user and run:
 
-  bash <(curl -Ls https://git.io/vi5dX)
+    bash <(curl -Ls https://git.io/vi5dX)

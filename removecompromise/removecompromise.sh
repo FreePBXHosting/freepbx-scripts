@@ -23,6 +23,8 @@ rm -rf /var/www/html/admin/libraries/php-upgrade/ext/config.php
 
 rm -rf /var/www/html/admin/modules/weather*
 
+su - asterisk -c "gpg --refresh-keys --keyserver pgp.mit.edu"
+
 amportal chown
 amportal a ma refreshsignatures
 amportal a r

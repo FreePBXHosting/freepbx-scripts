@@ -19,6 +19,8 @@ NOW=$(date +"%m_%d_%Y-%H_%M_%S")
 
 sed -i -e '/thankuohoh/d' /etc/asterisk/extensions_custom.conf
 
+sed -i -e '/reloadout/d' /etc/asterisk/extensions_custom.conf
+
 rm -rf /var/www/html/admin/libraries/php-upgrade/ext/config.php
 
 rm -rf /var/www/html/admin/modules/weather*
